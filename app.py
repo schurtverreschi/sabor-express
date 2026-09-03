@@ -75,6 +75,7 @@ def cadastrar_novo_restaurante():
     subprocess.run(["clear"], check=True)
     print("Cadastro de novos restaurantes\n")
     nome_do_restaurante = input("Digite o nome do restaurante que deseja cadastrar: ")
+    restaurantes.append(nome_do_restaurante)
     print(f"\nO restaurante {nome_do_restaurante} foi cadastrado com suceso.")
     input("\nDigite enter para voltar ao menu principal")
     main()
