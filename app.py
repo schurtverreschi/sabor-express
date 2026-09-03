@@ -1,6 +1,6 @@
 import subprocess
 
-restaurantes = []
+restaurantes = ["Rest 1", "Rest 2", "Rest 3"]
 
 
 def main():
@@ -84,7 +84,8 @@ def cadastrar_novo_restaurante():
 def listar_restaurantes():
     subprocess.run(["clear"], check=True)
     print("Lista de restaurantes cadastrados:\n")
-    print(restaurantes)
+    for restaurante in restaurantes:
+        print(f"- {restaurante}")
     input("\nDigite enter para retornar ao menu pincipal")
     main()
 
