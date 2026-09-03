@@ -4,7 +4,7 @@ restaurantes = ["Rest 1", "Rest 2", "Rest 3"]
 
 
 def main():
-    subprocess.run(["clear"], check=True)
+    exibir_subtitulo("")
     exibir_nome_do_programa()
     exibir_opcoes()
     escolher_opcao()
@@ -71,9 +71,13 @@ def escolher_opcao():
     #     opcao_invalida()
 
 
-def cadastrar_novo_restaurante():
+def exibir_subtitulo(subtitulo):
     subprocess.run(["clear"], check=True)
-    print("Cadastro de novos restaurantes\n")
+    print(subtitulo + "\n")
+
+
+def cadastrar_novo_restaurante():
+    exibir_subtitulo("Cadastro de novo restaurante")
     nome_do_restaurante = input("Digite o nome do restaurante que deseja cadastrar: ")
     restaurantes.append(nome_do_restaurante)
     print(f"\nO restaurante {nome_do_restaurante} foi cadastrado com suceso.")
@@ -82,8 +86,7 @@ def cadastrar_novo_restaurante():
 
 
 def listar_restaurantes():
-    subprocess.run(["clear"], check=True)
-    print("Lista de restaurantes cadastrados:\n")
+    exibir_subtitulo("Lista de restaurantes cadastrados:")
     for restaurante in restaurantes:
         print(f"- {restaurante}")
     input("\nDigite enter para retornar ao menu pincipal")
@@ -91,13 +94,12 @@ def listar_restaurantes():
 
 
 def ativar_restaurante():
-    subprocess.run(["clear"], check=True)
+    exibir_subtitulo("Ativar restaurante")
     # fazer def ativar restaurante
 
 
 def finalizar_app():
-    subprocess.run(["clear"], check=True)
-    print("App Finalizado\n")
+    exibir_subtitulo("App Finalizado")
 
 
 def opcao_invalida():
