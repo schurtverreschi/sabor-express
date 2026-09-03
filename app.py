@@ -82,7 +82,10 @@ def cadastrar_novo_restaurante():
 
 def listar_restaurantes():
     subprocess.run(["clear"], check=True)
-    # fazer def listar restaurante
+    print("Lista de restaurantes cadastrados:\n")
+    print(restaurantes)
+    input("\nDigite enter para retornar ao menu pincipal")
+    main()
 
 
 def ativar_restaurante():
