@@ -76,26 +76,30 @@ def exibir_subtitulo(subtitulo):
     print(subtitulo + "\n")
 
 
+def voltar_menu_principal():
+    input("\nDigite enter para voltar ao menu principal")
+    main()
+
+
 def cadastrar_novo_restaurante():
     exibir_subtitulo("Cadastro de novo restaurante")
     nome_do_restaurante = input("Digite o nome do restaurante que deseja cadastrar: ")
     restaurantes.append(nome_do_restaurante)
     print(f"\nO restaurante {nome_do_restaurante} foi cadastrado com suceso.")
-    input("\nDigite enter para voltar ao menu principal")
-    main()
+    voltar_menu_principal()
 
 
 def listar_restaurantes():
     exibir_subtitulo("Lista de restaurantes cadastrados:")
     for restaurante in restaurantes:
         print(f"- {restaurante}")
-    input("\nDigite enter para retornar ao menu pincipal")
-    main()
+    voltar_menu_principal()
 
 
 def ativar_restaurante():
     exibir_subtitulo("Ativar restaurante")
     # fazer def ativar restaurante
+    voltar_menu_principal()
 
 
 def finalizar_app():
@@ -104,8 +108,7 @@ def finalizar_app():
 
 def opcao_invalida():
     print("\nOpção Invalida")
-    input("\nDigite qualquer tecla para retornar ao menu: ")
-    main()
+    voltar_menu_principal()
 
 
 if __name__ == "__main__":
