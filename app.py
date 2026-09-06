@@ -1,6 +1,10 @@
 import subprocess
 
-restaurantes = ["Rest 1", "Rest 2", "Rest 3"]
+restaurantes = [
+    {"Nome": "Abaré", "Categoria": "Pizzaria", "Status": False},
+    {"Nome": "Panela Mineira", "Categoria": "Comida Mineira", "Status": False},
+    {"Nome": "Olk", "Categoria": "Hamburgueria", "Status": False},
+]
 
 
 def main():
@@ -84,7 +88,15 @@ def voltar_menu_principal():
 def cadastrar_novo_restaurante():
     exibir_subtitulo("Cadastro de novo restaurante")
     nome_do_restaurante = input("Digite o nome do restaurante que deseja cadastrar: ")
-    restaurantes.append(nome_do_restaurante)
+    categoria_do_restaurante = input(
+        f"\nDigite a categoria do restaurante {nome_do_restaurante}: "
+    )
+    restaurante = {
+        "Nome": nome_do_restaurante,
+        "Categoria": categoria_do_restaurante,
+        "Status": False,
+    }
+    restaurantes.append(restaurante)
     print(f"\nO restaurante {nome_do_restaurante} foi cadastrado com sucesso.")
     voltar_menu_principal()
 
@@ -92,7 +104,9 @@ def cadastrar_novo_restaurante():
 def listar_restaurantes():
     exibir_subtitulo("Lista de restaurantes cadastrados:")
     for restaurante in restaurantes:
-        print(f"- {restaurante}")
+        print(
+            f"- {restaurante['Nome']} | {restaurante['Categoria']} | {restaurante['Status']}"
+        )
     voltar_menu_principal()
 
 
