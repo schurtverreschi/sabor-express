@@ -50,7 +50,7 @@ def escolher_opcao():
             case 2:
                 return listar_restaurantes()
             case 3:
-                return ativar_restaurante()
+                return alterar_status_restaurante()
             case 4:
                 return finalizar_app()
             case _:
@@ -66,7 +66,7 @@ def escolher_opcao():
     #     elif opcao_escolhida == 2:
     #         listar_restaurantes()
     #     elif opcao_escolhida == 3:
-    #         ativar_restaurante()
+    #         alterar_status_restaurante()
     #     elif opcao_escolhida == 4:
     #         finalizar_app()
     #     else:
@@ -110,9 +110,26 @@ def listar_restaurantes():
     voltar_menu_principal()
 
 
-def ativar_restaurante():
+def alterar_status_restaurante():
     exibir_subtitulo("Ativar restaurante")
-    # fazer def ativar restaurante
+
+    nome = input("Digite o nome do restaurante que deseja alterar o status: ")
+    restaurante_encontrado = False
+
+    for restaurante in restaurantes:
+        if nome == restaurante["Nome"]:
+            restaurante_encontrado = True
+            restaurante["Status"] = not restaurante["Status"]
+            mensagem = (
+                f"\nO {nome} foi ativado com sucesso."
+                if restaurante["Status"]
+                else f"\nO {nome} foi desativado com sucesso."
+            )
+            print(mensagem)
+
+    if not restaurante_encontrado:
+        print(f"\nO restaurante {nome} não foi encontrado")
+
     voltar_menu_principal()
 
 
