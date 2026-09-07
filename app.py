@@ -103,10 +103,15 @@ def cadastrar_novo_restaurante():
 
 def listar_restaurantes():
     exibir_subtitulo("Lista de restaurantes cadastrados:")
+
+    print(f"{'Nome'.ljust(22)} | {'Categoria'.ljust(20)} | Status")
+
     for restaurante in restaurantes:
-        print(
-            f"- {restaurante['Nome']} | {restaurante['Categoria']} | {restaurante['Status']}"
-        )
+        nome = restaurante["Nome"]
+        categoria = restaurante["Categoria"]
+        status = "Ativado" if restaurante["Status"] else "Desativado"
+        print(f"- {nome.ljust(20)} | {categoria.ljust(20)} | {status}")
+
     voltar_menu_principal()
 
 
