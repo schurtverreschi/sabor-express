@@ -36,11 +36,6 @@ def exibir_opcoes():
 4. Sair\n
 """)
 
-    # print("1. Cadastrar restaurante")
-    # print("2. Listar restaurantes")
-    # print("3. Ativar restaurante")
-    # print("4. Sair\n")
-
 
 def escolher_opcao():
     """Função que interpreta o input do usuário e chama a função correspondente"""
@@ -61,22 +56,6 @@ def escolher_opcao():
                 return opcao_invalida()
     except ValueError:
         opcao_invalida()
-
-    # try:
-    #     opcao_escolhida = int(input("Escolha uma opção: "))
-
-    #     if opcao_escolhida == 1:
-    #         cadastrar_novo_restaurante()
-    #     elif opcao_escolhida == 2:
-    #         listar_restaurantes()
-    #     elif opcao_escolhida == 3:
-    #         alterar_status_restaurante()
-    #     elif opcao_escolhida == 4:
-    #         finalizar_app()
-    #     else:
-    #         opcao_invalida()
-    # except ValueError:
-    #     opcao_invalida()
 
 
 def exibir_subtitulo(subtitulo):
